@@ -11,26 +11,31 @@ class Program
         {
             string gradeLevel = "A";
             Console.WriteLine("Your grade level is " + gradeLevel +".");
+            Console.WriteLine();
         }
         else if (grade >= 80)
         {
             string gradeLevel = "B";
             Console.WriteLine("Your grade level is " + gradeLevel +".");
+            Console.WriteLine();
         }
         else if (grade >= 70)
         {
             string gradeLevel = "C";
             Console.WriteLine("Your grade level is " + gradeLevel +".");
+            Console.WriteLine();
         }
         else if (grade >= 60)
         {
             string gradeLevel = "D";
             Console.WriteLine("Your grade level is " + gradeLevel +".");
+            Console.WriteLine();
         }
         else
         {
             string gradeLevel = "F";
             Console.WriteLine("Your grade level is " + gradeLevel +".");
+            Console.WriteLine();
         }
 
         if (grade >= 70)
@@ -41,6 +46,7 @@ class Program
         {
             Console.WriteLine();
             Console.WriteLine("Your grade is lower than 60% needed to pass this course,\n but you can certainly do better if you persevere");
+            Console.WriteLine();
         }
     }
 }
