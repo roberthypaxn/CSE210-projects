@@ -9,6 +9,7 @@ class Program
         {
             Console.WriteLine("Welcome to the Program!");
         }
+        Console.WriteLine("--------------------------------");
         DisplayWelcome();
 
         //Function PromptUserName - Asks for and returns the user's name (as a string)
@@ -18,6 +19,7 @@ class Program
             string name = Console.ReadLine();
             return name;
         }
+        Console.WriteLine("--------------------------------------------");
         //Function PromptUserNumber - Asks for and returns the user's favorite number (as an integer)
         static int PromptUserNumber()
         {
@@ -39,6 +41,9 @@ class Program
             Console.WriteLine($"{thename}, the square of you number is {thenumber}");
         }
         //Calling functions to diplay results
+        Console.WriteLine("-------------------------------------------------------------------");
         DisplayResult(PromptUserName(),SquareNumber(PromptUserNumber()));
+        Console.WriteLine("-------------------------------------------------------------------");
+
     }
 }
