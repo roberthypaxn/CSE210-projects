@@ -38,6 +38,7 @@ class Program
         {
             Console.WriteLine($"{thename}, the square of you number is {thenumber}");
         }
-        
+        //Calling functions to diplay results
+        DisplayResult(PromptUserName(),SquareNumber(PromptUserNumber()));
     }
 }
