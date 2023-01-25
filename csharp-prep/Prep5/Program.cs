@@ -18,5 +18,15 @@ class Program
             string name = Console.ReadLine();
             return name;
         }
+        //Function PromptUserNumber - Asks for and returns the user's favorite number (as an integer)
+        static int PromptUserNumber()
+        {
+            Console.Write("Please enter your favorite number: ");
+            string favNum = Console.ReadLine();
+            int favoriteNumber = int.Parse(favNum);
+            return favoriteNumber;
+        }
+
+        
     }
 }
