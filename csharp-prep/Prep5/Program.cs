@@ -33,6 +33,11 @@ class Program
            int squared = given * given;
            return squared;
         }
+        //Function DisplayResult - Accepts the user's name and the squared number and displays them.
+        static void DisplayResult(string thename, int thenumber)
+        {
+            Console.WriteLine($"{thename}, the square of you number is {thenumber}");
+        }
         
     }
 }
