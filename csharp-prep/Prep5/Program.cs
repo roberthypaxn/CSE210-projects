@@ -26,7 +26,13 @@ class Program
             int favoriteNumber = int.Parse(favNum);
             return favoriteNumber;
         }
-
+        
+        //Function SquareNumber - Accepts an integer as a parameter and returns that number squared (as an integer)
+        static int SquareNumber(int given)
+        {
+           int squared = given * given;
+           return squared;
+        }
         
     }
 }
