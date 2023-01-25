@@ -19,7 +19,7 @@ class Program
             string name = Console.ReadLine();
             return name;
         }
-        Console.WriteLine("--------------------------------------------");
+        Console.WriteLine("---------------------------------");
         //Function PromptUserNumber - Asks for and returns the user's favorite number (as an integer)
         static int PromptUserNumber()
         {
@@ -38,10 +38,10 @@ class Program
         //Function DisplayResult - Accepts the user's name and the squared number and displays them.
         static void DisplayResult(string thename, int thenumber)
         {
+            Console.WriteLine("-------------------------------------------------------------------");
             Console.WriteLine($"{thename}, the square of you number is {thenumber}");
         }
         //Calling functions to diplay results
-        Console.WriteLine("-------------------------------------------------------------------");
         DisplayResult(PromptUserName(),SquareNumber(PromptUserNumber()));
         Console.WriteLine("-------------------------------------------------------------------");
 
