@@ -11,5 +11,12 @@ class Program
         }
         DisplayWelcome();
 
+        //Function PromptUserName - Asks for and returns the user's name (as a string)
+        static string PromptUserName()
+        {
+            Console.Write("Please enter your name: ");
+            string name = Console.ReadLine();
+            return name;
+        }
     }
 }
