@@ -18,12 +18,6 @@ public class Job
     {
     }
 
-    // A method that displays the name of the company
-    public void Display()
-    {
-        Console.WriteLine($"{_company}");
-    }
-
     //A method that displas the job title, name of company, beggining and ending year
     public void DisplayJobDetails()
     {

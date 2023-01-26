@@ -18,9 +18,6 @@ class Program
     job2._startYear = 2000;
     job2._endYear = 2023;
 
-    Console.WriteLine("-------------------------------------");
-    job1.Display();
-
     // Resume instance
     Resume myResume = new Resume();
     myResume._nameOfPerson = "Man on Earth";
