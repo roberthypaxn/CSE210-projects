@@ -20,10 +20,13 @@ class Program
 
     Console.WriteLine("-------------------------------------");
     job1.Display();
-    Console.WriteLine("-------------------------------------");
-    job1.DisplayJobDetails();
-    Console.WriteLine("-------------------------------------");
-    job2.DisplayJobDetails();
-    Console.WriteLine("-------------------------------------");
+
+    // Resume instance
+    Resume myResume = new Resume();
+    myResume._nameOfPerson = "Man on Earth";
+
+    myResume._jobs.Add(job1);
+    myResume._jobs.Add(job2);
+    myResume.Display();
     }
 }
