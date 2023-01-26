@@ -24,6 +24,12 @@ public class Job
         Console.WriteLine($"{_company}");
     }
 
+    //A method that displas the job title, name of company, beggining and ending year
+    public void DisplayJobDetails()
+    {
+        Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
+    }
+
     // A method that displays the person's full name as used in western 
     // countries or <given name family name>.
 }
