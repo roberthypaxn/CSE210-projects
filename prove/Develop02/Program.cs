@@ -24,9 +24,12 @@ class Program
         int newNumber = int.Parse(newNum);
 
         //put the above in a loop that adds to the list until someone hits zero
-       if (newNumber != 5)
+       while (newNumber != 5)
        {
             Console.WriteLine("Wazzaaa!");
+            string chosenNumber = Console.ReadLine();
+            Console.WriteLine(chosenNumber);
+            newNumber = int.Parse(chosenNumber);
        }
 
     }
