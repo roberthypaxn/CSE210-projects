@@ -72,13 +72,16 @@ class Program
                     Console.WriteLine("What is the name of the file?");
                     string fileToRead = Console.ReadLine();
 
-                    using (StreamWriter outputFile = new StreamWriter(fileToRead))
+                    using (StreamWriter outputFile = new StreamWriter(fileToRead, true))
                     {
                         foreach (Entry writing in journaling._textEntries)
                         {
                             outputFile.WriteLine($"{writing._currentTime} ~ {writing._promptMessage} ~ {writing._journaledText}");
                         }
                     }
+                    break;
+                case 5:
+                    newNumber = 5;
                     break;
                 default:
                     Console.WriteLine("______________________________________________________");
