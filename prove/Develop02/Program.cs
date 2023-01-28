@@ -12,7 +12,7 @@ class Program
         //Instances
         Journal journaling = new Journal();
         PromptGenerator encouragement = new PromptGenerator();
-        //Menu
+        //Menu loop
         int newNumber = 0;
         while (newNumber != 5)
         {
@@ -29,14 +29,21 @@ class Program
             Console.Write("What would you like to do? ");
             string newNum = Console.ReadLine();
             newNumber = int.Parse(newNum);
-
+            //Switch to manage user's choices 
             switch (newNumber)
             {
                 case 1:
+                    // The following lines fetch the current date and current time and
+                    //concatenate them in one string
                     Entry newEntry = new Entry();
-                    newEntry._currentTime = DateTime.Now.ToShortDateString();
+                    string timer = DateTime.Now.ToLongTimeString();
+                    string dater = DateTime.Now.ToShortDateString();
+                    newEntry._currentTime = $"{dater} - {timer}";
+                    //The following lines create a random number between zero and nine
                     Random randomness = new Random();
                     int randomNumber = randomness.Next(0,9);
+                    //The random number is used as index in the ReturnPrompt Method from
+                    //PromptGenerator calss, and a journaled entry is captured in _textEntries
                     newEntry._promptMessage = encouragement.ReturnPrompt(randomNumber);
                     Console.WriteLine($"\n{newEntry._promptMessage}\n");
                     Console.Write("> ");
@@ -44,9 +51,14 @@ class Program
                     Console.WriteLine();
                     journaling._textEntries.Add(newEntry);
                     break;
+                //To display the text one has journaled
                 case 2:
                     journaling.Display();
                     break;
+                //Loading content from file, using delimite ~
+                //For files where we might want to read the full content/paragraphs
+                //so that lines are not broken before delimiters are reaches
+                //we can use File.ReadAllContent(filename) instead of ReadAllLines(filename)
                 case 3:
                     Console.WriteLine("What is the filename?");
                     string filename = Console.ReadLine();
@@ -67,11 +79,12 @@ class Program
 
                     }
                     break;
-                
+                //Writing new lines in our file
                 case 4:
                     Console.WriteLine("What is the name of the file?");
                     string fileToRead = Console.ReadLine();
-
+                    // To prevent the new entries from replacing the old ones in the file
+                    //a boolean of true is added in the StreamWriter class instantiation
                     using (StreamWriter outputFile = new StreamWriter(fileToRead, true))
                     {
                         foreach (Entry writing in journaling._textEntries)
@@ -84,6 +97,7 @@ class Program
                     newNumber = 5;
                     break;
                 default:
+                    //in case someone chooses something different from 1,2,3,4,5
                     Console.WriteLine("______________________________________________________");
                     Console.WriteLine("| !!! Please choose a valid number from the menu !!! |");
                     Console.WriteLine("------------------------------------------------------");

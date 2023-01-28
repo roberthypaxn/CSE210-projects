@@ -5,11 +5,10 @@ using System;
 public class Journal
 {
 
-    // A special method, called a constructor that is invoked using the  
-    // new keyword followed by the class name and parentheses.
+    // List to store entries
     public List<Entry>_textEntries = new List<Entry>();
 
-    //A method that displas the Journal title, name of company, beggining and ending year
+    //A method that displas the entries made
     public void Display()
     {
         foreach (Entry entry in _textEntries)

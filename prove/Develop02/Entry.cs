@@ -8,7 +8,6 @@ public class Entry
     public string _currentTime = "";
     public string _journaledText = ""; 
     public string _promptMessage = "";
-    // new keyword followed by the class name and parentheses.
     
     //method
     public void written()
@@ -16,6 +15,7 @@ public class Entry
         Console.WriteLine($"\nDate: {_currentTime}");
         Console.WriteLine($"engouragement: {_promptMessage}");
         Console.WriteLine($"Your entry: {_journaledText}");
+        //The next line exists for beauty
         Console.WriteLine("------------------------------------------------------");
 
     }

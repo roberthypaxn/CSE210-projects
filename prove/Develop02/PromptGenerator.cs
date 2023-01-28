@@ -2,6 +2,10 @@ using System;
 
 public class PromptGenerator
 {
+    //List containing custom prompts to encourage the user.
+    //Here it is considered that the reason the user often feels like not journaling
+    //is because they are self-indulgent and would like something that helps them
+    //build good habits.
     List<string> _encouragement = new List<string>()
     {
         "Your daily actions create your personality. Are you becoming someone all parts of your mind agree with?",
