@@ -17,6 +17,4 @@ public class Journal
         }
     }
 
-    // A method that displays the person's full name as used in western 
-    // countries or <given name family name>.
 }
