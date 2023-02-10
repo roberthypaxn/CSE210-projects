@@ -6,7 +6,6 @@ public class Resume
 {
     //member varialbles
     public string _nameOfPerson = "";
-    // new keyword followed by the class name and parentheses.
     public List<Job> _jobs = new List<Job>();
     //method
     public void Display()
