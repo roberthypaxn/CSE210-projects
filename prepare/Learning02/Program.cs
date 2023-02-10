@@ -6,17 +6,21 @@ class Program
     {
         //Console.WriteLine("Hello Learning02 World!");
     // Job instances
-    Job job1 = new Job();
-    job1._company = "Microsoft";
-    job1._jobTitle = "C.E.O";
-    job1._startYear = 1900;
-    job1._endYear = 2000;
+    Job job1 = new Job("Internet Computer", "C.E.O", 1700, 1800);
+    Job job2 = new Job("LinkedIn", "C.E.O", 1800, 1900);
+    Job job3 = new Job();
+    Job job4 = new Job();
+    
+    job3._company = "Microsoft";
+    job3._jobTitle = "C.E.O";
+    job3._startYear = 1900;
+    job3._endYear = 2000;
 
-    Job job2 = new Job();
-    job2._company = "Apple";
-    job2._jobTitle = "C.E.O";
-    job2._startYear = 2000;
-    job2._endYear = 2023;
+    
+    job4._company = "Apple";
+    job4._jobTitle = "C.E.O";
+    job4._startYear = 2000;
+    job4._endYear = 2023;
 
     // Resume instance
     Resume myResume = new Resume();
@@ -24,6 +28,8 @@ class Program
 
     myResume._jobs.Add(job1);
     myResume._jobs.Add(job2);
+    myResume._jobs.Add(job3);
+    myResume._jobs.Add(job4);
     myResume.Display();
     }
 }
