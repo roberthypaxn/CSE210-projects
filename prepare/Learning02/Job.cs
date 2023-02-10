@@ -17,6 +17,13 @@ public class Job
     public Job()
     {
     }
+    public Job( string aCompany, string aJobTitle, int aStartYear, int aEndYear)
+    {
+        _jobTitle = aJobTitle;
+        _company = aCompany;
+        _startYear = aStartYear;
+        _endYear = aEndYear;
+    }
 
     //A method that displas the job title, name of company, beggining and ending year
     public void DisplayJobDetails()
