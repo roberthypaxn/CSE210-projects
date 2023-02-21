@@ -39,7 +39,7 @@ class Program
         static void DisplayResult(string thename, int thenumber)
         {
             Console.WriteLine("-------------------------------------------------------------------");
-            Console.WriteLine($"{thename}, the square of you number is {thenumber}");
+            Console.WriteLine($"{thename}, the square root of your number is {thenumber}");
         }
         //Calling functions to diplay results
         DisplayResult(PromptUserName(),SquareNumber(PromptUserNumber()));
