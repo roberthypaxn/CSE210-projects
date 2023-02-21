@@ -39,7 +39,7 @@ class Program
         Console.WriteLine("-------------------------------------");
         //average
         float average = ((float)summation) / numbers.Count;
-        Console.WriteLine($"The average if these numbers is: {average}");
+        Console.WriteLine($"The average of these numbers is: {average}");
         Console.WriteLine("-------------------------------------");
 
     }
