@@ -19,10 +19,10 @@ class Program
         switch (choice)
         {
             case 1:
-                Reflecting choice1 = new Reflecting("Breathing", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
+                Breathing choice1 = new Breathing("Breathing", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
                 choice1.WelcomeMessage();
                 choice1.GetReady();
-                choice1.Breathing();
+                choice1.BreatheInOut();
                 choice1.WellDone();
                 return;
             case 2:
