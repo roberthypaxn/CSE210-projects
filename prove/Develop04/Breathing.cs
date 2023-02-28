@@ -32,37 +32,6 @@ class Breathing : Activity
             Console.WriteLine("\n");
             timeSpent += 10;
         }
-    }
-    public void WellDone()
-    {
-        int _timing = GetChosenTime();
-        string _chosenActivity = GetChosenActivity();
-        var spins = GetSpinner();
-        spins.Add("|");
-        spins.Add("/");
-        spins.Add("-");
-        spins.Add("\\");
-        spins.Add("|");
-        spins.Add("/");
-        spins.Add("-");
-        spins.Add("\\");
-        Console.WriteLine("Well Done!");
-        foreach(string spinner in spins)
-        {
-            Console.Write(spinner);
-            Thread.Sleep(600);
-            Console.Write("\b \b");
-        }
-        Console.WriteLine("\n");
-        Console.WriteLine($"You have completed {_timing} seconds of the {_chosenActivity} Activity");
-        foreach(string spinner in spins)
-        {
-            Console.Write(spinner);
-            Thread.Sleep(600);
-            Console.Write("\b \b");
-        }
-    }
-        
-        
+    }    
     
 }

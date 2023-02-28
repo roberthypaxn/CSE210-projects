@@ -12,7 +12,7 @@ public class Activity
     {
         _activity.Add(chosenActivity);
         _activity.Add(describeActivity);
-        _welcome = $"Welcome to the {_activity[0]} Activity";
+        _welcome = $"\nWelcome to the {_activity[0]} Activity";
         _description = _activity[1];
     }
    
@@ -23,8 +23,8 @@ public class Activity
         Console.WriteLine(_description);
         Console.WriteLine(" ");
         Console.Write("How long, in seconds, would you like your session? ");
-        Console.WriteLine("\n");
         _seconds = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
     }
 
     public string GetChosenActivity()
@@ -36,11 +36,7 @@ public class Activity
     {
         return _seconds;
     }
-    public List<string> GetSpinner()
-    {
-        return spinners;
-    }
-    public void GetReady()
+    public void GetSpinner(int someTime)
     {
         spinners.Add("|");
         spinners.Add("/");
@@ -50,15 +46,28 @@ public class Activity
         spinners.Add("/");
         spinners.Add("-");
         spinners.Add("\\");
-        Console.WriteLine("Get Ready");
+        
         foreach(string spinner in spinners)
         {
             Console.Write(spinner);
-            Thread.Sleep(600);
+            Thread.Sleep(someTime*100);
             Console.Write("\b \b");
         }
         Console.WriteLine("\n");
     }
-
+    public void GetReady()
+    {
+        
+        Console.WriteLine("Get Ready...");
+        GetSpinner(6);
+        
+    }
+    public void WellDone()
+    {
+        Console.WriteLine("Well Done!");
+        GetSpinner(5);
+        Console.WriteLine($"You have completed another {_seconds} seconds of The {_activity[0]} Activity.");
+        GetSpinner(5);
+    }
 
 }
