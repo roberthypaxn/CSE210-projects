@@ -47,11 +47,24 @@ public class Activity
         spinners.Add("-");
         spinners.Add("\\");
         
-        foreach(string spinner in spinners)
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(someTime);
+
+        int i = 0;
+
+        while (DateTime.Now < endTime)
         {
-            Console.Write(spinner);
-            Thread.Sleep(someTime*100);
+            string spin = spinners[i];
+            Console.Write(spin);
+            Thread.Sleep(1000);
             Console.Write("\b \b");
+
+            i++;
+
+            if(i >= spinners.Count)
+            {
+                i = 0;
+            }
         }
         Console.WriteLine("\n");
     }

@@ -33,8 +33,11 @@ class Program
                 choise2.WellDone();
                 return;
             case 3:
-                Activity choise3 = new Activity("Listing","This activity will help you reflect on the good tings in your life by having you list as many things as you can in a certain area.");
+                Listing choise3 = new Listing("Listing","This activity will help you reflect on the good tings in your life by having you list as many things as you can in a certain area.");
                 choise3.WelcomeMessage();
+                choise3.GetReady();
+                choise3.ListActivity();
+                choise3.WellDone();
                 return;
             default:
                 break;

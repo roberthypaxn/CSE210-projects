@@ -57,7 +57,8 @@ class Reflecting : Activity
         {
             Console.Write($"> {_oneQuestion} ");
             int _sessionTime = GetChosenTime();
-            GetSpinner(_sessionTime);
+            int timeForquestion = _sessionTime/_magicQuestions.Count;
+            GetSpinner(timeForquestion);
         }
     }
 }
