@@ -1,7 +1,0 @@
-1~X~Simple Goal~Simple~thing~10
-2~ ~Eternal Goal~Eternal~thing~20~5~0
-3~ ~Eternal Goal~Eternity~thingy~30~3~0
-4~ ~Eternal Goal~Ether~Etherium~40~4~0
-5~X~Simple Goal~Zimple~zing~50
-6~X~Simple Goal~Jimmy~McGill~20
-7~X~Checklist Goal~Saul Goodman~You better call saul~30~3~3~20~0

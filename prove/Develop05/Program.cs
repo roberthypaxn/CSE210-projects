@@ -76,14 +76,23 @@ class Program
         Eternal eternalGoal = new Eternal("Eternal Goal");
         Checklist checklistGoal = new Checklist("Checklist Goal");
         
-
+        int visits = 0;
         while (choice != 6)
         {
             int accomplished = Achievement();
             pointsAchieved = accomplished;
             goalNumber = currentGoals.Count() + liners.Count() +1;
+
             Console.WriteLine();
-            Console.WriteLine($"You have {pointsAchieved} points"); //{simpleGoal.GetPoints()}
+            if(visits == 0 && pointsAchieved == 0)
+            {
+                Console.WriteLine("Welcome!\n");
+                Console.WriteLine($"You have {pointsAchieved} points");
+            } else if(visits==0 && !(pointsAchieved ==0)){
+                Console.WriteLine($"Welcome back!! You now have {pointsAchieved} points");
+            } else if(!(visits == 0)){
+                Console.WriteLine($"You have {pointsAchieved} points");
+            }
             Console.WriteLine();
             Console.WriteLine("Menu Options");
             Console.WriteLine("  1. Create New Goals");
@@ -111,26 +120,14 @@ class Program
                         case 1:
                             goal = simpleGoal.CreateGoal(goalNumber);
                             currentGoals.Add(goal);
-                            foreach(string line in currentGoals)
-                            {
-                                Console.WriteLine(line);
-                            }
                             break;
                         case 2:
                             goal = eternalGoal.CreateGoal(goalNumber);
                             currentGoals.Add(goal);
-                            foreach(string line in currentGoals)
-                            {
-                                Console.WriteLine(line);
-                            }
                             break;
                         case 3:
                             goal = checklistGoal.CreateGoal(goalNumber);
                             currentGoals.Add(goal);
-                            foreach(string line in currentGoals)
-                            {
-                                Console.WriteLine(line);
-                            }
                             break;
                         default:
                             break;
@@ -153,6 +150,7 @@ class Program
             }
             typeOfGoal = 0;
             pointsAchieved = pointsAchieved - accomplished;
+            visits = visits +1;
         }
         List<string> GetAllGoals()
         {
@@ -190,7 +188,6 @@ class Program
         {
             // read the file, see what's in it. If any lines in all list is in the file, don't rewrite it.
             List<string> allGoals = GetAllGoals();
-            //List<string> saved = GetSavedGoals();
             
             using (StreamWriter goalsFile = new StreamWriter("goals.txt",false))
             {
@@ -218,7 +215,7 @@ class Program
                     Console.WriteLine($"{parts[0]}. [{parts[1]}] {parts[2]} ({parts[3]}) -- Currently completed: {parts[6]}/{parts[7]}");
                 }
             }
-            Console.WriteLine("Which goal did you accomplish? ");
+            Console.Write("Which goal did you accomplish? ");
             string completeGoal = Console.ReadLine();
             int completedGoal = int.Parse(completeGoal);
             string oneDown = all[completedGoal-1];
@@ -251,9 +248,16 @@ class Program
                 }else{
                     currentGoals[indexOfGoal] = oneDown;
                 }
+                Console.WriteLine();
+                Console.WriteLine($"Congratulations!!! You have earned {partsOfAchievedGoal[5]} points");
                 
+                if(partsOfAchievedGoal[2] == "Checklist Goal" && int.Parse(partsOfAchievedGoal[6]) == int.Parse(partsOfAchievedGoal[7]))
+                    Console.WriteLine($"You've now unlocked a bonus of {partsOfAchievedGoal[8]} points");
+
+                Console.WriteLine("Please save your goals to recover your progress next time you use the program"); 
             }else if(currentGoals.Contains(oneDown) && savedOnes.Contains(oneDown)){
-                int indexOfGoal = currentGoals.IndexOf(oneDown);
+                int indexOfGoalInCurrent = currentGoals.IndexOf(oneDown);
+                int indexOfGoalInSaved = savedOnes.IndexOf(oneDown);
                 if (partsOfAchievedGoal[2] == "Simple Goal" && !(partsOfAchievedGoal[1] == "X"))
                 {
                     partsOfAchievedGoal[1] = "X";
@@ -276,23 +280,29 @@ class Program
                 {
                     currentGoals[0] = oneDown;
                 }else if(!(savedOnes.Count() == 0) && !(currentGoals.Count() == 0)){
-                    currentGoals[indexOfGoal] = oneDown;
+                    currentGoals[indexOfGoalInCurrent] = oneDown;
                 }else{
-                    currentGoals[indexOfGoal] = oneDown;
+                    currentGoals[indexOfGoalInCurrent] = oneDown;
                 }
                 if(savedOnes.Count() == 1){
                     savedOnes[0] = oneDown;
                 }else{
-                    savedOnes[indexOfGoal] = oneDown;
+                    savedOnes[indexOfGoalInSaved] = oneDown;
                 }
-                using (StreamWriter goalsFile = new StreamWriter("goals.txt",false))
+                using (StreamWriter goalsFile = new StreamWriter("goals.txt",false))//problem
                 {
                     foreach (string goal in savedOnes)
                     {
                         goalsFile.WriteLine(goal);
                     }
                 }
-            }else if(savedOnes.Contains(oneDown) && !(currentGoals.Contains(oneDown)))//!!! if savedOnes goal number + goal name + description is equal to those in oneDown
+                Console.WriteLine();
+                Console.WriteLine($"Congratulations!!! You have earned {partsOfAchievedGoal[5]} points");
+                
+                if(partsOfAchievedGoal[2] == "Checklist Goal" && int.Parse(partsOfAchievedGoal[6]) == int.Parse(partsOfAchievedGoal[7]))
+                    Console.WriteLine($"You've now unlocked a bonus of {partsOfAchievedGoal[8]} points");
+
+            }else if(savedOnes.Contains(oneDown) && !(currentGoals.Contains(oneDown)))
             {
                 int indexOfGoal = savedOnes.IndexOf(oneDown);
                 
@@ -325,9 +335,13 @@ class Program
                     foreach (string goal in savedOnes)
                     {
                         goalsFile.WriteLine(goal);
-                        Console.WriteLine(goal);
                     }
                 }
+                Console.WriteLine();
+                Console.WriteLine($"Congratulations!!! You have earned {partsOfAchievedGoal[5]} points");
+                
+                if(partsOfAchievedGoal[2] == "Checklist Goal" && int.Parse(partsOfAchievedGoal[6]) == int.Parse(partsOfAchievedGoal[7]))
+                    Console.WriteLine($"You've now unlocked a bonus of {partsOfAchievedGoal[8]} points");
             }
             
         }
@@ -365,7 +379,3 @@ class Program
         }
     }
 }
-/*If a goal is in current goal and is in saved goals
--put a cross on it if it's a simple goal and replace the one with the cross in current goals and saved goals.
--if it's an eternal goal add up achievements and replace it in current goals everytime it's achieved.
--if it's a checklist goal add up achievements and replace it in current goals everytime it's achieved,if achievements are equal to levels put a cross on it and replace it in current goals*/
