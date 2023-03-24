@@ -21,7 +21,6 @@ class Eternal: Goal
         _pointsAmount = Console.ReadLine();
 
         string newGoal = $"{goalNumber}~ ~{_goalType}~{_goalName}~{_shortDescription}~{_pointsAmount}~{_completed}~{_doneManyTimes}";
-        _listOfGoals.Add(newGoal);
         return newGoal;
     }
 }
