@@ -34,15 +34,15 @@ class Program
         List<string> videos = new List<string>();
 
         foreach(string comment in fullStack._comments){
-            videos.Add($"\nTitle: {fullStack._title}\nAuthor: {fullStack._author}\nDuration: {fullStack._length.ToString()}\nComments = \n{comment}");
+            videos.Add($"\nTitle: {fullStack._title}\nAuthor: {fullStack._author}\nDuration: {fullStack._length.ToString()}\nComments: \n{comment}");
         }
 
         foreach(string comment in python._comments){
-            videos.Add($"\nTitle: {python._title}\nAuthor: {python._author}\nDuration: {python._length.ToString()}\nComments = \n{comment}");
+            videos.Add($"\nTitle: {python._title}\nAuthor: {python._author}\nDuration: {python._length.ToString()}\nComments: \n{comment}");
         }
 
         foreach(string comment in csharp._comments){
-            videos.Add($"\nTitle: {csharp._title}\nAuthor: {csharp._author}\nDuration: {csharp._length.ToString()}\nComments = \n{comment}");
+            videos.Add($"\nTitle: {csharp._title}\nAuthor: {csharp._author}\nDuration: {csharp._length.ToString()}\nComments: \n{comment}");
         }
         
         foreach(string video in videos)
