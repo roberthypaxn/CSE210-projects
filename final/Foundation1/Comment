@@ -1,0 +1,11 @@
+using System;
+
+class Comment
+{
+    private string _nameOfUser;
+    private string _commentText;
+    public Comment()
+    {
+        
+    }
+}
