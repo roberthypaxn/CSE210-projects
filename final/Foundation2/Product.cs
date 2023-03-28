@@ -2,7 +2,7 @@ using System;
 
 class Product
 {
-    internal object _productId;
+    internal string _productId;
     internal string _productName;
     internal int _price;
     private int _quantity;
